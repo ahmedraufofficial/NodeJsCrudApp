@@ -1,16 +1,12 @@
+require('dotenv').config({path: '.env'})
 const express = require('express');
-
-//bring in mongoose
 const mongoose = require('mongoose');
-
-//bring in method override
 const methodOverride = require('method-override');
-
 const userRouter = require('./routes/users');
 const User = require('./models/User');
 const app = express();
 
-mongoose.connect('mongodb+srv://ahmedrauf:crudAppStuff@crud.nvjibix.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect(`mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@${process.env.MONGO_URI}/?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -31,4 +27,6 @@ app.use(express.static('public'));
 
 app.use('/users', userRouter);
 
-app.listen(5000);
+app.listen(5000, () => {
+  console.log("app Running on localhost:5000")
+});
