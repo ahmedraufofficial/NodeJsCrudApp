@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('header') -%>
+
+ <body>
+
+    <div class="container">
+        <a href="/" class="button inner-link"><i class="material-icons mr-2">arrow_left</i>Back</a>
+        <h1 class="text-white">New User</h1>
+
+        <form action="/users" method="POST" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="first_name" class="text-white">First Name</label>
+                <input type="text" class="form-control" placeholder="First Name" name="first_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name" class="text-white">Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name" name="last_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bio" class="text-white">Bio</label>
+                <textarea name="bio" placeholder="Biography" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="birthday" class="text-white">Birthday</label>
+                <input type="date" name="birthday" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="country" class="text-white">Country</label>
+                <select name="country" class="form-control">
+                    <%- include('countryCodes') -%>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="image" class="text-white">Upload Passport Image</label>
+                <input type="file" name="image" id="image" class="form-control-file text-white">
+            </div>
+
+
+                <button type="submit" class="button" style="width: 4em;">Save</button>
+                <a href="/" class="inner-link button-danger" style="width: 3em;">Cancel</a>
+       
+        </form>
+       
+    </div>
+
+</body>
+
+</html>

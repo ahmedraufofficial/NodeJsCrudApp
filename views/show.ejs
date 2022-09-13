@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('header') -%>
+
+ <body>
+    <div class="container">
+        <div class="mb" style="display: flex; flex-direction: row; justify-content: space-between;">
+            <a href="/" class="button inner-link"><i class="material-icons mr-2">arrow_left</i>Back</a>
+            <div>
+                <a href="/users/edit/<%= user.id %>" class="inner-link">
+                    <button class="icon" style="background:#007bff;">
+                        <i class="material-icons" style="color:white;">create</i>
+                    </button>
+                </a>
+                <form action="/users/<%=user.id%>?_method=DELETE" method="POST" style="display: inline;">
+                    <button style="background:rgb(173, 43, 43);" class="icon">
+                        <i class="material-icons" style="color:white;">delete</i>
+                    </button>
+                </form>
+            </div>
+        </div>
+ 
+        <div class="card"> 
+            <img src="/uploads/images/<%= user.img %>" class="card-img" alt="Passport Picture">
+            <div class="info">
+                <h4 class="capitalize" style="font-weight: 200;"><b>Full Name:</b> <%= user.first_name %></h4>
+                <h4 class="capitalize" style="font-weight: 200;"><b>Last Name:</b> <%= user.last_name %></h4>
+                <h4 style="font-weight: 200;"><b>Country:</b> <%= user.country %></h4>
+                <h4 style="font-weight: 200;"><b>Birthday:</b> <%= new Date(user.birthday).toLocaleDateString() %></h4>
+                <br>
+                <h4>Biography:</h4>
+                <p><%- user.bio %></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
