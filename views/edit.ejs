@@ -2,12 +2,9 @@
 <html lang="en">
 
 <%- include('header') -%>
-
- <body>
-
     <div class="container">
         <a href="/" class="button inner-link"><i class="material-icons mr-2">arrow_left</i>Back</a>
-        <h1 class="mb-4 text-white">Editing <%= user.first_name %> <%= user.last_name %></h1>
+        <h1 class="mb-4 text-white">Editing <u class="capitalize"><%= user.first_name %> <%= user.last_name %></u></h1>
 
         <form action="/users/<%= user.id %>" method="POST" enctype="multipart/form-data">
 
@@ -42,17 +39,17 @@
 
             <div class="form-group">
                 <label for="country" class="text-white">Current Passport Picture</label>
-                <div style="display: flex;">
+                <div style="display: flex;" class="edit-pic">
                     <img src="/uploads/images/<%= user.img %>" width="100px" height="100px" alt="Passport Picture">
-                    <div class="form-group" style="padding: 0 0 0 2em;">
+                    <div class="form-group replace-pic">
                         <label for="image" class="text-white">Replace</label>
                         <input type="file" name="image" id="image" class="form-control-file text-white">
                     </div>
                 </div>
             </div>
             
-            <button type="submit" class="button" style="width: 4em;">Save</button>
-            <a href="/" class="inner-link button-danger" style="width: 3em;">Cancel</a>
+            <button type="submit" class="button-btn" style="width: 4em;">Save</button>
+            <a href="/" class="inner-link button-danger" style="width: 3em; margin-left: 0.5em;">Cancel</a>
 
         </form>
     </div>
@@ -61,9 +58,4 @@
         let element = document.getElementById('country');
         element.value = '<%= user.country %>';
     </script>
-
-</body>
-
-
-
-</html>
+<%- include('footer') -%>

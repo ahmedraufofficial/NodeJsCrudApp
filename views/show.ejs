@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <%- include('header') -%>
-
- <body>
     <div class="container">
-        <div class="mb" style="display: flex; flex-direction: row; justify-content: space-between;">
-            <a href="/" class="button inner-link"><i class="material-icons mr-2">arrow_left</i>Back</a>
-            <div>
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <a href="/" class="button inner-link mb"><i class="material-icons mr-2">arrow_left</i>Back</a>
+            <div style="margin-top: 0.8em;">
                 <a href="/users/edit/<%= user.id %>" class="inner-link">
-                    <button class="icon" style="background:#007bff;">
+                    <button class="icon" style="background:dodgerblue;">
                         <i class="material-icons" style="color:white;">create</i>
                     </button>
                 </a>
@@ -34,6 +29,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+<%- include('footer') -%>

@@ -2,8 +2,6 @@
 <html lang="en">
 
 <%- include('header') -%>
-
- <body>
     <div class="container">
         <div>
             <a href="users/new" class="button inner-link"><i class="material-icons mr-2">add_circle</i>New User</a>
@@ -15,7 +13,7 @@
 
             <p class="text-white">No users yet, create a new one</p>
             <% } else{ %>  
-            <div style="display: flex; flex-direction: row; justify-content: space-between; color: white;">
+            <div style="display: flex; flex-direction: row; justify-content: space-between; ">
                 <div class="box">Full Name</div>
                 <div class="box">Country</div>
                 <div class="box">Birthday</div>
@@ -37,7 +35,7 @@
                         </button>
                     </a>
                     <a href="users/edit/<%= user.id %>">
-                        <button class="icon" style="background:#007bff;">
+                        <button class="icon" style="background:dodgerblue;">
                             <i class="material-icons" style="color:white;">create</i>
                         </button>
                     </a>
@@ -49,13 +47,6 @@
                 </div>
             </div>
             <% }) %>
-
-
-
-
         </div>
-        <script src="/js/index.js"></script>
-
-</body>
-
-</html>
+    </div>
+<%- include('footer') -%>
