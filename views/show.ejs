@@ -17,7 +17,7 @@
         </div>
  
         <div class="card"> 
-            <img src="/uploads/images/<%= user.img %>" class="card-img" alt="Passport Picture">
+            <img src="/uploads/images/<%= user.img %>" onerror="if (this.src != '/images/error.jpg') this.src = '/images/error.jpg';" class="card-img" alt="Passport Picture">
             <div class="info">
                 <h4 class="capitalize" style="font-weight: 200;"><b>First Name:</b> <%= user.first_name %></h4>
                 <h4 class="capitalize" style="font-weight: 200;"><b>Last Name:</b> <%= user.last_name %></h4>
